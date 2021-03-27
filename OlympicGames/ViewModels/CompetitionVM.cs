@@ -19,27 +19,31 @@ namespace OlympicGames.ViewModels
         public RelayCommand SelectionChangedCmd { get; set; }
         public List<Country> Countries { get; set; }
         public List<SportType> SportTypes { get; set; }
-        public List<SportType> Categories { get; set; }
+        public List<SubSportType> Categories { get; set; }
         public SportType SelectedSportType { get; set; }        
         public List<Athlet> Athlets { get; set; }
 
         public CompetitionVM()
         {           
             //Messenger = App.Container.GetInstance<Messenger>();
-            SportTypes = new List<SportType>();
-            Categories = new List<SportType>();
+           
             
-            SelectionChangedCmd = new RelayCommand(() =>
+            using (var db = new OlympicDB())
             {
-                
-            });
+                Countries = db.Countries.ToList();
+                SportTypes = db.SportTypes.ToList();
+
+                SelectionChangedCmd = new RelayCommand(() =>
+                {
+                    MessageBox.Show("H");
+                    Categories = db.SubSportTypes.Where(x => x.SportType.Id == SelectedSportType.Id).ToList();
+                });
+            }
+                        
             
             SaveCmd = new RelayCommand(() =>
             {
-                using (var db = new OlympicDB())
-                {
-
-                }
+                
             });
         }
 
