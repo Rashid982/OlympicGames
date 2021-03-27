@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="OlympicGames.Views.CompetitionUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Cmd="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:OlympicGames.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+    <Grid>
+        <Image Height="70" Margin="10,10,0,0" Source="/Images/OlympicGamesLogo.png" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+
+        <Viewbox Grid.Row="1">
+            <StackPanel Margin="0,0,0,7" Width="300">
+
+                <Label>Sport name:</Label>
+                <ComboBox ItemsSource="{Binding SportTypes}" SelectedItem="{Binding SelectedSportType}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+
+                    <Cmd:Interaction.Triggers>
+                        <Cmd:EventTrigger EventName="SelectionChanged">
+                            <Cmd:InvokeCommandAction Command="{Binding SelectionChangedCmd}"></Cmd:InvokeCommandAction>
+                        </Cmd:EventTrigger>
+                    </Cmd:Interaction.Triggers>
+                </ComboBox>
+
+                <Label>Categories:</Label>
+                <ComboBox ItemsSource="{Binding Categories}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <Label>Country 1:</Label>
+                <ComboBox ItemsSource="{Binding Countries}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <Label>Athlets 1:</Label>
+                <ComboBox ItemsSource="{Binding}">
+
+                </ComboBox>
+
+                <Label>Country 2:</Label>
+                <ComboBox ItemsSource="{Binding Countries}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <Label>Athlets 2:</Label>
+                <ComboBox></ComboBox>
+
+                <Label>Values:</Label>
+                <ComboBox></ComboBox>
+                <Label>Gender:</Label>
+                <RadioButton>Man</RadioButton>
+                <RadioButton>Woman</RadioButton>
+                <Label>Date:</Label>
+                <TextBox></TextBox>
+                <CheckBox Margin="0,5,0,0">Final or not</CheckBox>
+                <Button Command="{Binding SaveBtn}" Height="25" Margin="0,10,0,0">Save</Button>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</UserControl>

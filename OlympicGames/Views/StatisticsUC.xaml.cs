@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OlympicGames
+namespace OlympicGames.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StatisticsUC.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StatisticsUC : UserControl
     {
-        public MainWindow()
+        public StatisticsUC()
         {
             InitializeComponent();
         }
