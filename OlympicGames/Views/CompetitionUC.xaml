@@ -28,6 +28,10 @@
                     </Cmd:Interaction.Triggers>
                 </ComboBox>
 
+                <Label>Gender:</Label>
+                <RadioButton IsChecked="{Binding IsCheckedMen}">Men</RadioButton>
+                <RadioButton IsChecked="{Binding IsCheckedWomen}" Margin="0,0,0,8">Women</RadioButton>
+                
                 <Label>Categories:</Label>
                 <ComboBox ItemsSource="{Binding Categories}">
                     <ComboBox.ItemTemplate>
@@ -65,9 +69,7 @@
 
                 <Label>Values:</Label>
                 <ComboBox></ComboBox>
-                <Label>Gender:</Label>
-                <RadioButton>Man</RadioButton>
-                <RadioButton>Woman</RadioButton>
+                
                 <Label>Date:</Label>
                 <TextBox></TextBox>
                 <CheckBox Margin="0,5,0,0">Final or not</CheckBox>

@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Messaging;
+﻿using BaseApp.Entity;
+using GalaSoft.MvvmLight.Messaging;
 using OlympicGames.ViewModels;
 using SimpleInjector;
 using System;
@@ -24,6 +25,7 @@ namespace OlympicGames
             Container.Register<OlympicGamesVM>();
             Container.Register<CompetitionVM>();
             Container.Register<StatisticsVM>();
+            Container.RegisterSingleton<OlympicDB>();
         }
     }
 }
