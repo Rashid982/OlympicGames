@@ -12,6 +12,10 @@ namespace BaseApp.Models
     {
         public double MaxWeight { get; set; }
         public double MinWeight { get; set; }
+        public override string ToString()
+        {
+            return $"{MaxWeight} - {MinWeight}";
+        }
 
         public virtual ICollection<SubSportType> SubSportTypes { get; set; }
     }
