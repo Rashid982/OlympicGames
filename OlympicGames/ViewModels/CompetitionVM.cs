@@ -106,7 +106,7 @@ namespace OlympicGames.ViewModels
         public Athlet SelectedAthlet2 { get; set; }
         public WeightLimite SelectedWeightLimite { get; set; }
         public LengthLimite SelectedLengthLimite { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime SelectedDateTime { get; set; }
         public Competition Competition { get; set; }
 
         public CompetitionVM()
@@ -116,11 +116,17 @@ namespace OlympicGames.ViewModels
             Competition = new Competition();
             Countries = context.Countries.ToList();
             SportTypes = context.SportTypes.ToList();
-            DateTime = DateTime.Now;
-
+            SelectedDateTime = DateTime.Now;
+            
             SaveCmd = new RelayCommand(() =>
             {
-                
+                Competition.Athlets = new List<Athlet>()
+                {
+                    SelectedAthlet1, SelectedAthlet2
+                };
+                Competition.StartTime = SelectedDateTime;
+                Competition.SubSportType = SelectedCategory;
+                MessageBox.Show("The competition is ready!");
             });
         }
     }

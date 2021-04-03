@@ -22,10 +22,14 @@ namespace OlympicGames
         {
             Container = new Container();
             Container.RegisterSingleton<Messenger>();
+            Container.RegisterSingleton<OlympicDB>();
             Container.Register<OlympicGamesVM>();
             Container.Register<CompetitionVM>();
             Container.Register<StatisticsVM>();
-            Container.RegisterSingleton<OlympicDB>();
+            Container.Register<CountryDataGridVM>();
+            Container.Register<SportTypeDataGridVM>();
+            Container.Register<SignInVM>();
+            Container.Register<RegistrVM>();
         }
     }
 }

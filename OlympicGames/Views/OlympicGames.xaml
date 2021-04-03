@@ -5,14 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OlympicGames.Views"
         xmlns:VM="clr-namespace:OlympicGames.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="OlympicGames" Height="450" Width="800">
+        Title="OlympicGames" Height="450" Width="800" MinHeight="400" MinWidth="750">
     <Window.Resources>
         <DataTemplate DataType="{x:Type VM:CompetitionVM}">
             <local:CompetitionUC/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type VM:StatisticsVM}">
             <local:StatisticsUC/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type VM:CountryDataGridVM}">
+            <local:CountryDataGridUC/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type VM:SportTypeDataGridVM}">
+            <local:SportTypeDataGridUC/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type VM:SignInVM}">
+            <local:SignInUC/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type VM:RegistrVM}">
+            <local:RegistrUC/>
         </DataTemplate>
     </Window.Resources>
 

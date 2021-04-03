@@ -48,6 +48,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.9.5.3\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
     </Reference>
@@ -97,19 +100,36 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Messages\NavigationM.cs" />
+    <Compile Include="Validations\RegistrValidation.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
     <Compile Include="ViewModels\CompetitionVM.cs" />
+    <Compile Include="ViewModels\CountryDataGridVM.cs" />
     <Compile Include="ViewModels\OlympicGamesVM.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\RegistrVM.cs" />
+    <Compile Include="ViewModels\SignInVM.cs" />
+    <Compile Include="ViewModels\SportTypeDataGridVM.cs" />
     <Compile Include="ViewModels\StatisticsVM.cs" />
     <Compile Include="Views\CompetitionUC.xaml.cs">
       <DependentUpon>CompetitionUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CountryDataGridUC.xaml.cs">
+      <DependentUpon>CountryDataGridUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OlympicGames.xaml.cs">
       <DependentUpon>OlympicGames.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegistrUC.xaml.cs">
+      <DependentUpon>RegistrUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignInUC.xaml.cs">
+      <DependentUpon>SignInUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SportTypeDataGridUC.xaml.cs">
+      <DependentUpon>SportTypeDataGridUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StatisticsUC.xaml.cs">
       <DependentUpon>StatisticsUC.xaml</DependentUpon>
@@ -148,7 +168,11 @@
       <Name>BaseApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\OlympicGames1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\OlympicGamesLogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -159,7 +183,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CountryDataGridUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\OlympicGames.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegistrUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignInUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SportTypeDataGridUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

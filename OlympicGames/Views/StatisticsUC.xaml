@@ -3,19 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:OlympicGames.ViewModels"
              xmlns:local="clr-namespace:OlympicGames.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
+        
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
+        
         <StackPanel Orientation="Horizontal">
-            <Button Width="100" Margin="15">Country</Button>
-            <Button Width="100" Margin="15">General</Button>
-            <Button Width="100" Margin="15">Sport</Button>
+            <Button Width="65" Margin="15" Command="{Binding BackCmd}">Back</Button>
+            <Button Width="100" Margin="15" Command="{Binding CountryCmd}">Country</Button>
+            <Button Width="100" Margin="15" Command="{Binding SportTypeCmd}">Sport</Button>
+            <Button Width="100" Margin="15" Command="{Binding GeneralCmd}">General</Button>
         </StackPanel>
-        <DataGrid Grid.Row="1"></DataGrid>
+
+        <ContentControl Grid.Row="1" Content="{Binding CurrentVM}"></ContentControl>       
     </Grid>
 </UserControl>

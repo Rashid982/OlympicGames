@@ -16,7 +16,7 @@ namespace OlympicGames.ViewModels
         public OlympicGamesVM()
         {
             Messenger = App.Container.GetInstance<Messenger>();
-            CurrentVM = App.Container.GetInstance<CompetitionVM>();
+            CurrentVM = App.Container.GetInstance<SignInVM>();
             Messenger.Register<NavigationM>(this, x => { CurrentVM = x.CurrentVM; });
         }
     }
