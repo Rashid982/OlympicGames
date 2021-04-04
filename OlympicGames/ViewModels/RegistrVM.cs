@@ -63,6 +63,14 @@ namespace OlympicGames.ViewModels
             {
                 var passwordBox = x as PasswordBox;
                 var Password = passwordBox.Password;
+                if (string.IsNullOrWhiteSpace(Password))
+                {
+                    MessageBox.Show("Please, enter password! ");
+                }
+                else
+                {
+                   
+                }                
                 
             }, (x) => !string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Surname) && !string.IsNullOrWhiteSpace(UserName) 
             && !LetterValidations.IsMatch(Name) && !LetterValidations.IsMatch(Surname) && !DigitValidations.IsMatch(Age) && string.IsNullOrEmpty(Error));
