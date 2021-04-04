@@ -17,13 +17,13 @@
         </Rectangle>
         <Label VerticalContentAlignment="Top" HorizontalAlignment="Center" FontSize="14" Margin="0,25,0,0">REGISTRATION</Label>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
-            <TextBox Text="{Binding Name}" Margin="0,0,0,0" FontSize="15" materialDesign:HintAssist.Hint="NAME" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
-            <TextBox Text="{Binding Surname}" Margin="0,0,0,0" FontSize="15" materialDesign:HintAssist.Hint="SURNAME" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
-            <TextBox Text="{Binding Age}" Margin="0,0,0,0" FontSize="15" materialDesign:HintAssist.Hint="AGE" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}" Margin="0,0,0,0" FontSize="15" materialDesign:HintAssist.Hint="NAME" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+            <TextBox Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}" Margin="0,0,0,0" FontSize="15" materialDesign:HintAssist.Hint="SURNAME" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+            <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}" Margin="0,0,0,0" FontSize="15" materialDesign:HintAssist.Hint="AGE" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
             <ComboBox Margin="0,15,0,0" FontSize="15" materialDesign:HintAssist.Hint="STATUS" Style="{StaticResource MaterialDesignComboBox}"></ComboBox>
-            <TextBox Text="{Binding UserName}" Margin="0,0,0,0" FontSize="15" materialDesign:HintAssist.Hint="USERNAME" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
-            <PasswordBox Margin="0,0,0,0" FontSize="15"  materialDesign:HintAssist.Hint="PASSWORD"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"></PasswordBox>           
-            <Button Width="110" Margin="0,35,0,0">Register</Button>            
+            <TextBox Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}" Margin="0,0,0,0" FontSize="15" materialDesign:HintAssist.Hint="USERNAME" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+            <PasswordBox x:Name="txtPassword" Margin="0,0,0,0" FontSize="15"  materialDesign:HintAssist.Hint="PASSWORD"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"></PasswordBox>
+            <Button Command="{Binding RegisterCmd}" CommandParameter="{Binding ElementName=txtPassword}" Width="110" Margin="0,35,0,0">Register</Button>            
         </StackPanel>
     </Grid>
 </UserControl>
